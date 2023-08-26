@@ -1,11 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "noEmit": true,
     "outDir": "dist",
     "jsx": "react-jsx",
+    "jsxImportSource": "@idealjs/van-jsx",
     "paths": {
-      "@idealjs/mono-template-core": ["../../packages/core/src"]
+      "@idealjs/van-jsx/*": ["../../packages/core/src/*"]
     }
   },
   "include": ["src"],

@@ -1,12 +1,5 @@
-import "./index.css"
+import van from "vanjs-core";
 
-import React from "react"
-import ReactDOM from "react-dom/client"
+import RacingGame from "./components/RacingGame";
 
-import App from "./App"
-
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+van.add(document.getElementById("app")!, <RacingGame name={"string"} />);
