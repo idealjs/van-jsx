@@ -54,8 +54,6 @@ export const jsx = (
     ref?: State<Element>;
   }
 ) => {
-  console.log("test test", props);
-
   if (typeof jsxTag === "string") {
     const ele = van.tags[jsxTag](mergeStyle(props, style), children);
 
