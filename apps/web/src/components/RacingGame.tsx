@@ -1,5 +1,4 @@
 import { createState } from "@idealjs/van-jsx";
-import van from "vanjs-core";
 
 import Run from "./Run";
 
