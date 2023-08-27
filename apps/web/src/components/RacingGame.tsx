@@ -1,76 +1,74 @@
 import { createState } from "@idealjs/van-jsx";
 import van from "vanjs-core";
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const Run = ({ sleepMs }: { sleepMs: number }) => {
-  const headingSpaces = van.state(40),
-    trailingUnderscores = van.state(0);
-
-  const animate = async () => {
-    while (headingSpaces.val > 0) {
-      await sleep(sleepMs);
-      --headingSpaces.val;
-      ++trailingUnderscores.val;
-    }
-  };
-  animate();
-
-  return van.tags.pre(
-    () =>
-      `${" ".repeat(headingSpaces.val)}🚐💨Hello VanJS!${"_".repeat(
-        trailingUnderscores.val
-      )}`
-  );
-};
+import Run from "./Run";
 
 interface IProps {
   name: string;
 }
 
 const RacingGame = (props: IProps) => {
-  const ref = createState<HTMLDivElement>(null);
+  const ref1 = createState<{
+    start: () => Promise<void>;
+  }>(null);
+  const ref2 = createState<{
+    start: () => Promise<void>;
+  }>(null);
+  const ref3 = createState<{
+    start: () => Promise<void>;
+  }>(null);
+  const ref4 = createState<{
+    start: () => Promise<void>;
+  }>(null);
+  const ref5 = createState<{
+    start: () => Promise<void>;
+  }>(null);
 
   return (
     <div>
       <button
         onclick={() => {
-          van.add(ref.val, Run({ sleepMs: 2000 }));
+          ref1.val.start();
         }}
       >
-        Hello 🐌
+        Start 🐌
       </button>
       <button
         onclick={() => {
-          van.add(ref.val, Run({ sleepMs: 500 }));
+          ref2.val.start();
         }}
       >
-        Hello 🐢
+        Start 🐢
       </button>
+
       <button
         style={{}}
         onclick={() => {
-          van.add(ref.val, Run({ sleepMs: 100 }));
+          ref3.val.start();
         }}
       >
-        Hello 🚶‍♂️
-      </button>
-      <button
-        onclick={() => {
-          van.add(ref.val, Run({ sleepMs: 10 }));
-        }}
-      >
-        Hello 🏎️
-      </button>
-      <button
-        onclick={() => {
-          van.add(ref.val, Run({ sleepMs: 2 }));
-        }}
-      >
-        Hello 🚀
+        Start 🚶‍♂️
       </button>
 
-      <div ref={ref} className="hello"></div>
+      <button
+        onclick={() => {
+          ref4.val.start();
+        }}
+      >
+        Start 🏎️
+      </button>
+      <button
+        onclick={() => {
+          ref5.val.start();
+        }}
+      >
+        Start 🚀
+      </button>
+      <Run ref={ref1} sleepMs={2000} />
+      <Run ref={ref2} sleepMs={500} />
+      <Run ref={ref3} sleepMs={100} />
+      <Run ref={ref4} sleepMs={10} />
+      <Run ref={ref5} sleepMs={2} />
     </div>
   );
 };
