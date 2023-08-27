@@ -64,7 +64,7 @@ export const jsx = (
     return ele;
   }
   if (typeof jsxTag === "function") {
-    return jsxTag({ ...props, style, children });
+    return jsxTag({ ...props, ref, style, children });
   }
 };
 
