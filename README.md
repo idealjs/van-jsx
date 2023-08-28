@@ -60,29 +60,48 @@ yarn add @idealjs/van-jsx vanjs-core
 
 ### Add You Component
 
-1. main.ts -> main.tsx
+1.  main.ts -> main.tsx
 
-   ```tsx
-   import van from "vanjs-core";
+    ```tsx
+    import van from "vanjs-core";
 
-   import Hello from "./Hello";
+    import Hello from "./Hello";
 
-   van.add(document.getElementById("app")!, <Hello name={"your name"} />);
-   ```
+    van.add(document.getElementById("app")!, <Hello name={"your name"} />);
+    ```
 
-2. Write Your Component
+2.  change index.html
 
-   Hello.tsx
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@idealjs/web-ide</title>
+      </head>
+      <body>
+        <div id="app"></div>
+        <!-- change script src -->
+        <script type="module" src="/src/main.tsx"></script>
+      </body>
+    </html>
+    ```
 
-   ```tsx
-   interface IProps {
-     name: string;
-   }
+3.  Write Your Component
 
-   const Hello = (props: IProps) => {
-     const { name } = props;
-     return <div>Hello {name}</div>;
-   };
+    Hello.tsx
 
-   export default Hello;
-   ```
+    ```tsx
+    interface IProps {
+      name: string;
+    }
+
+    const Hello = (props: IProps) => {
+      const { name } = props;
+      return <div>Hello {name}</div>;
+    };
+
+    export default Hello;
+    ```
