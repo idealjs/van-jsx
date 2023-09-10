@@ -2864,6 +2864,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^20.6.0":
+  version: 20.6.0
+  resolution: "@types/node@npm:20.6.0"
+  checksum: 52611801af5cf151c6fac1963aa4a8a8ca2e388a9e9ed82b01b70bca762088ded5b32cc789c5564220d5d7dccba2b8dd34446a3d4fc74736805e1f2cf262e29d
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
@@ -8774,6 +8781,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"refresh-test@workspace:apps/refresh-test":
+  version: 0.0.0-use.local
+  resolution: "refresh-test@workspace:apps/refresh-test"
+  dependencies:
+    "@idealjs/van-jsx": "workspace:^"
+    "@types/node": ^20.6.0
+    typescript: ^5.0.2
+    vanjs-core: ^1.2.0
+    vite: ^4.4.5
+  languageName: unknown
+  linkType: soft
+
 "regenerate-unicode-properties@npm:^10.1.0":
   version: 10.1.0
   resolution: "regenerate-unicode-properties@npm:10.1.0"
@@ -10206,6 +10225,13 @@ __metadata:
   version: 1.1.1-perf.2
   resolution: "vanjs-core@npm:1.1.1-perf.2"
   checksum: 7e15045c07f3d79cb226e722dec8911cfb14bd90311050a8a7378393f4ba5b28d580447a8d3576a3911ed3411323ac148b7e6f85fa23626326d41ae95c20a596
+  languageName: node
+  linkType: hard
+
+"vanjs-core@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "vanjs-core@npm:1.2.0"
+  checksum: 94804102aea1af89d18d2adf00f711d0c80c7dbbdde0a6d886ab344d94b99db68a684d2e61dffcdbce408e6bb232450a3048c26526b4aee57fd22e23e91eeedf
   languageName: node
   linkType: hard
 
