@@ -13,6 +13,7 @@ export type FunctionChild<P> = (props: P) => Element;
 export type ComponentChild =
   | FunctionChild<any>
   | Element
+  | Element[]
   | string
   | number
   | bigint
