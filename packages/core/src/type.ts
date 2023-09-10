@@ -3,17 +3,13 @@ export type PropsWithChildren<P> = P & {
 };
 
 export interface FunctionComponent<P = {}> {
-  (props: PropsWithChildren<P>, context?: any): Element | Element[] | null;
+  (props: PropsWithChildren<P>, context?: any): Element | null;
 }
 
 export type ComponentType<P = {}> = FunctionComponent<P>;
 
-export type FunctionChild<P> = (props: P) => Element;
-
 export type ComponentChild =
-  | FunctionChild<any>
   | Element
-  | Element[]
   | string
   | number
   | bigint
