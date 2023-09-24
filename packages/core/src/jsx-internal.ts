@@ -1,7 +1,7 @@
 import * as CSS from "csstype";
 import { State } from "vanjs-core";
 
-import { ComponentChildren, FunctionChild } from "./type";
+import { ComponentChildren } from "./type";
 
 type OriginalElement = HTMLElement;
 
@@ -17,7 +17,6 @@ export namespace JSX {
     ref?: State<T>;
     children?: ComponentChildren;
   };
-  export type ElementType = string | FunctionChild<any>;
   export interface Element extends OriginalElement {}
 
   export interface ElementAttributesProperty {

@@ -9,6 +9,7 @@ export interface FunctionComponent<P = {}> {
 export type ComponentType<P = {}> = FunctionComponent<P>;
 
 export type ComponentChild =
+  | ComponentChild[]
   | Element
   | string
   | number

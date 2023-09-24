@@ -10,7 +10,8 @@
       {
         "enableDangerousAutofixThisMayCauseInfiniteLoops": true
       }
-    ]
+    ],
+    "react/jsx-key": "error"
   },
   "settings": {
     "react": {
