@@ -1,3 +1,7 @@
+# Repo Archive Statement
+
+van_jsx will be maintained at https://github.com/vanjs-org/van/tree/main/addons/van_jsx
+
 # @idealjs/van-jsx
 
 This Project is Prowerd by VanJS
