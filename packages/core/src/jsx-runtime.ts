@@ -1,73 +1,22 @@
-import * as CSS from "csstype";
-import van, { State } from "vanjs-core";
+import { JSXElementType, VanElement } from "./createElement";
+import { InnerElement, Key, TagOption } from "./type";
 
-import { ComponentChildren } from "./type";
-
-export const styleToString = (style: CSS.Properties) => {
-  return Object.entries(style).reduce(
-    (acc, key) =>
-      acc +
-      key[0]
-        .split(/(?=[A-Z])/)
-        .join("-")
-        .toLowerCase() +
-      ":" +
-      key[1] +
-      ";",
-    ""
-  );
-};
-
-const mergeStyle = (
-  props: Record<any, any>,
-  style?: CSS.Properties | (() => CSS.Properties)
-) => {
-  if (typeof style === "function") {
-    return {
-      ...props,
-      style: () => {
-        return styleToString(style());
-      },
-    };
+export namespace JSX {
+  export type ElementType = string | JSXElementType<any>;
+  export interface ElementAttributesProperty {
+    props: object;
+  }
+  export interface ElementChildrenAttribute {
+    children: object;
   }
 
-  if (style == null) {
-    return props;
+  export interface Element extends VanElement {}
+
+  export interface IntrinsicAttributes {
+    key?: Key;
   }
 
-  return {
-    ...props,
-    style: styleToString(style),
+  export type IntrinsicElements = {
+    [K in keyof InnerElement]: TagOption<K>;
   };
-};
-
-export const jsx = (
-  jsxTag: string | Function,
-  {
-    children,
-    style,
-    ref,
-    ...props
-  }: {
-    children?: ComponentChildren;
-    style?: CSS.Properties | (() => CSS.Properties);
-    ref?: State<Element>;
-  }
-) => {
-  if (typeof jsxTag === "string") {
-    const ele = van.tags[jsxTag](mergeStyle(props, style), children);
-
-    if (ref != null) {
-      ref.val = ele;
-    }
-
-    return ele;
-  }
-  if (typeof jsxTag === "function") {
-    return jsxTag({ ...props, ref, style, children });
-  }
-};
-
-export { jsx as jsxDEV, jsx as jsxs };
-
-export type { JSX } from "./jsx-internal";
+}

@@ -1,4 +1,3 @@
-import { lazy } from "@idealjs/van-jsx";
 import van from "vanjs-core";
 
 import Counter from "./Counter";
@@ -7,6 +6,8 @@ import TestLevelAB from "./TestLevelAB";
 
 const TestLevelA = () => {
   const countState = van.state(0);
+  const state = van.state("");
+
   const increase = () => {
     countState.val++;
   };
@@ -17,8 +18,9 @@ const TestLevelA = () => {
 
   return (
     <div>
+      <input value={state} onChange={(e) => (state.val = e.target.value)} />
       <Counter
-        count={lazy(() => countState.val)}
+        count={countState}
         increase={increase}
         decrease={decrease}
         name={"TestLevelA"}

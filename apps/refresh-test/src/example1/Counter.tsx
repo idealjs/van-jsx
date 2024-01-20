@@ -1,7 +1,9 @@
+import { State } from "vanjs-core";
+
 interface IProps {
   decrease: () => void;
   increase: () => void;
-  count: number;
+  count: State<number>;
   name: string;
 }
 
@@ -10,11 +12,11 @@ const Counter = (props: IProps) => {
   console.log("refresh counter", name);
   return (
     <div style={{ display: "flex" }}>
-      <button onclick={decrease}>-</button>
+      <button onClick={decrease}>-</button>
       <div>
         {name}:{count}
       </div>
-      <button onclick={increase}>+</button>
+      <button onClick={increase}>+</button>
     </div>
   );
 };

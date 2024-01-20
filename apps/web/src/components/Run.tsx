@@ -1,4 +1,3 @@
-import { lazy } from "@idealjs/van-jsx";
 import van, { State } from "vanjs-core";
 
 interface IProps {
@@ -26,11 +25,11 @@ const Run = (props: IProps) => {
 
   return (
     <pre>
-      {lazy(() => {
+      {() => {
         return `${" ".repeat(headingSpaces.val)}🚐💨Hello VanJS!${"_".repeat(
           trailingUnderscores.val
         )}`;
-      })}
+      }}
     </pre>
   );
 };

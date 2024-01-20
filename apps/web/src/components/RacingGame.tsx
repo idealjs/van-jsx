@@ -26,14 +26,14 @@ const RacingGame = (props: IProps) => {
   return (
     <div>
       <button
-        onclick={() => {
+        onClick={() => {
           ref1.val.start();
         }}
       >
         Start 🐌
       </button>
       <button
-        onclick={() => {
+        onClick={() => {
           ref2.val.start();
         }}
       >
@@ -42,7 +42,7 @@ const RacingGame = (props: IProps) => {
 
       <button
         style={{}}
-        onclick={() => {
+        onClick={() => {
           ref3.val.start();
         }}
       >
@@ -50,14 +50,14 @@ const RacingGame = (props: IProps) => {
       </button>
 
       <button
-        onclick={() => {
+        onClick={() => {
           ref4.val.start();
         }}
       >
         Start 🏎️
       </button>
       <button
-        onclick={() => {
+        onClick={() => {
           ref5.val.start();
         }}
       >
